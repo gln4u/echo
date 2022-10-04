@@ -1,14 +1,15 @@
-pipeline{
-  stages{
-  stage('clone'){
-    steps{
-    echo "clone from Github repo"
-  }
-  }
-    stage('build'){
-      steps{
-    echo "build stage"
-  }
+pipeline {
+    agent any
+    stages {
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
-}
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
 }
